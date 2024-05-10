@@ -9,7 +9,7 @@ app.get("/", async (req, res) => {
         const result = await axios.get("https://sfl.world/api/v1/prices");
         const finalRes = result.data.data.p2p;
         console.log(finalRes)
-        res.render("index.ejs", {finalRes: finalRes["Sunflower"]} )
+        res.send(finalRes["Sunflower"])
     } catch (error) {
         const message = "Failed to make request";
         console.error(message);
